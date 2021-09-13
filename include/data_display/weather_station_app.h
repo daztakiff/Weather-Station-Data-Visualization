@@ -5,7 +5,7 @@
 #include "cinder/gl/gl.h"
 #include "../data_retrieval/weather_data.h"
 #include "scaled_weather_station.h"
-#include "/Users/hackerman/CLionProjects/Cinder/my-projects/final-project-daztakiff/include/data_retrieval/receiver.h"
+#include "../data_retrieval/receiver.h"
 #include "menu.h"
 #include "map.h"
 
@@ -67,7 +67,7 @@ namespace weather_station {
         
         int state = 0;
         std::string place_ = "Urbana";
-        std::string time_ = "2021-05-06";
+        std::string time_ = "2021-09-13";
 
         ci::gl::Texture2dRef menu_texture_;
         ci::gl::Texture2dRef map_texture_;
