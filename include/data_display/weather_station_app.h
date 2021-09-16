@@ -53,6 +53,11 @@ namespace weather_station {
          */
         void LoadTextures();
         
+        /**
+         * Loads current time from std::chrono::system_clock::now() converts output to time string and assigns
+         */
+        void LoadDate();
+        
         ScaledWeatherStation station = ScaledWeatherStation();
 
         const int kWindowStationSizeX = 875;
@@ -67,7 +72,7 @@ namespace weather_station {
         
         int state = 0;
         std::string place_ = "Urbana";
-        std::string time_ = "2021-09-13";
+        std::string time_;
 
         ci::gl::Texture2dRef menu_texture_;
         ci::gl::Texture2dRef map_texture_;

@@ -1,4 +1,7 @@
 #include "data_display/weather_station_app.h"
+#include <iostream>
+#include <string>
+#include "data_display/date.h"
 
 namespace weather_station {
 
@@ -9,7 +12,9 @@ namespace weather_station {
 
         ci::app::setWindowSize(kWindowMenuSizeX, kWindowMenuSizeY);
         LoadTextures();
+        LoadDate();
         map_.SetCalendar(time_);
+        
     }
 
     void WeatherStationApp::draw() {
@@ -18,6 +23,7 @@ namespace weather_station {
             case 0:
                 ci::gl::color(ci::Color("white"));
                 ci::gl::draw(menu_texture_, ci::Rectf(0, 0, kWindowMenuSizeX, kWindowMenuSizeY));
+
                 menu_.DrawMenu();
                 break;
             case 1:
@@ -140,6 +146,12 @@ namespace weather_station {
         auto station_image = ci::loadImage(ci::app::loadAsset("backgrounds/mammatus_clouds.jpeg")
         );
         station_texture_ = ci::gl::Texture2d::create(station_image);
+    }
+
+    void WeatherStationApp::LoadDate() {
+        std::string s = date::format("%F %T", std::chrono::system_clock::now());
+        std::string date = s.substr(0, 10);
+        time_ = date;
     }
 
 }  // namespace idealgas
