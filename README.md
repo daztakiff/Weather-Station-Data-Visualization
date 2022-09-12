@@ -26,3 +26,7 @@ the current date so that the requests only go back seven days at max
 - Generally responds to Enter/Return to advance a screen and Backspace/Delete takes you back a screen  
   
 - Use up/down arrow keys to change date in the map menu, and up/down arrow keys to change hour once you have selected a location
+
+
+![alt text](weather_project.png "Title")
+![alt text](project_demo.gif "Title")
